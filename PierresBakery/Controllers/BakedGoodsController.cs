@@ -15,12 +15,13 @@ namespace PierresBakery.Controllers
     {
       Bread breadOrder = new Bread(breadInput);
       Pastry pastryOrder = new Pastry(pastryInput);
-      breadOrder.Quantity = breadInput;
-      pastryOrder.Quantity = pastryInput;
-      int breadTotal = breadOrder.CalculateTotal();
-      int pastryTotal = pastryOrder.CalculateTotal();
-      int orderTotal = breadTotal + pastryTotal;
-      return View(orderTotal);
+      PlaceOrder order = new PlaceOrder();
+      order.BreadTotal = breadOrder.CalculateTotal();
+      order.PastryTotal = pastryOrder.CalculateTotal();
+      order.Bread = breadInput;
+      order.Pastry = pastryInput;
+      order.Total = order.PastryTotal + order.BreadTotal;
+      return View(order);
     }
   }
 }

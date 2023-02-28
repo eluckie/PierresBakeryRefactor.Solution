@@ -31,7 +31,7 @@ Upon displaying their confirmed order and grand total, users are prompted to cho
 
 ### To Run Tests
 1. Navigate to this project's test directory called **PierresBakery.Tests**
-2. If the project already hasn't been restored, run ``dotnet restore``
+2. If the project hasn't already been restored, run ``dotnet restore``
 3. In the command line, run the command ``dotnet test`` to perform the tests and verify 100% pass-rate
 
 ## Known Bugs

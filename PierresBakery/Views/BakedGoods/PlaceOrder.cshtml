@@ -10,6 +10,16 @@
     <meta charset='utf-8'>
 </head>
 <body>
-
+  <h3>Order Confirmed!</h3>
+  <p>You have chosen @Model.Pastry pastries for $@Model.PastryTotal,
+    <br>
+    & @Model.Bread loaves of bread for $@Model.BreadTotal.
+  </p>
+  <h5>Your grand total is $@Model.Total</h5>
+  <br><br>
+  <p>Would you like to place another order?</p>
+  <a href="/bakedgoods/order-form">Yes please!</a>
+  <br>
+  <a href="/goodbye">No thank you</a>
 </body>
 </html>
