@@ -11,10 +11,23 @@
 </head>
 <body>
   <h3>Order Confirmed!</h3>
-  <p>You have chosen @Model.Pastry pastries for $@Model.PastryTotal,
-    <br>
-    & @Model.Bread loaves of bread for $@Model.BreadTotal.
-  </p>
+  @using PierresBakery.Models;
+  @if (@Model.Pastry == 1)
+  {
+    <p>You have chosen 1 pastry for $2</p>
+  }
+  @if (@Model.Pastry != 1)
+  {
+    <p>You have chosen @Model.Pastry pastries for $@Model.PastryTotal,</p>
+  }
+  @if (@Model.Bread == 1)
+  {
+    <p>& 1 loaf of bread for $5</p>
+  }
+  @if (@Model.Bread != 1)
+  {
+    <p>& @Model.Bread loaves of bread for $@Model.BreadTotal.</p>
+  }
   <h5>Your grand total is $@Model.Total</h5>
   <br><br>
   <p>Would you like to place another order?</p>
