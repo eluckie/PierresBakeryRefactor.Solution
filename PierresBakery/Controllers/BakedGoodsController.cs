@@ -1,0 +1,26 @@
+using Microsoft.AspNetCore.Mvc;
+using PierresBakery.Models;
+
+namespace PierresBakery.Controllers
+{
+  public class BakedGoodsController : Controller
+  {
+    [HttpGet("/bakedgoods/order-form")]
+    public ActionResult OrderForm()
+    {
+      return View();
+    }
+    [HttpPost("/bakedgoods/place-order")]
+    public ActionResult PlaceOrder(int breadInput, int pastryInput)
+    {
+      Bread breadOrder = new Bread(breadInput);
+      Pastry pastryOrder = new Pastry(pastryInput);
+      breadOrder.Quantity = breadInput;
+      pastryOrder.Quantity = pastryInput;
+      int breadTotal = breadOrder.CalculateTotal();
+      int pastryTotal = pastryOrder.CalculateTotal();
+      int orderTotal = breadTotal + pastryTotal;
+      return View(orderTotal);
+    }
+  }
+}
